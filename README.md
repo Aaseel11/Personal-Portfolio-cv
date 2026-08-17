@@ -2,7 +2,7 @@
 
 A bilingual (Arabic/English) website showcasing my projects, certifications, and skills. The site is fully responsive and works efficiently on all devices.
 
-Check it out here: 
+Check it out here: https://aaseel11.github.io/Personal-Portfolio-cv/
 
 # Contents
 

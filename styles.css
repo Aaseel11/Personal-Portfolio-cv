@@ -148,7 +148,6 @@ em {
 .grid-floor {
   position: absolute;
   inset: 0;
-
   opacity: 0.08;
 
   background-image:
@@ -197,8 +196,7 @@ em {
 
   writing-mode: vertical-rl;
 
-  text-shadow:
-    0 0 8px var(--gold);
+  text-shadow: 0 0 8px var(--gold);
 
   animation: rain linear infinite;
 }
@@ -246,8 +244,7 @@ em {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
 
-  animation:
-    draw 6s linear infinite;
+  animation: draw 6s linear infinite;
 }
 
 @keyframes draw {
@@ -261,9 +258,7 @@ em {
 }
 
 .bar-anim {
-  animation:
-    grow 4s ease-in-out infinite;
-
+  animation: grow 4s ease-in-out infinite;
   transform-origin: bottom;
 }
 
@@ -279,8 +274,7 @@ em {
 }
 
 .packet {
-  animation:
-    pulse-node 2s ease-in-out infinite;
+  animation: pulse-node 2s ease-in-out infinite;
 }
 
 @keyframes pulse-node {
@@ -305,11 +299,9 @@ em {
   right: 4%;
 
   width: 320px;
-
   opacity: 0.28;
 
-  animation:
-    float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -345,7 +337,6 @@ em {
     );
 
   border-bottom: none;
-
   border-radius: 8px 8px 0 0;
 }
 
@@ -354,7 +345,6 @@ em {
   height: 8px;
 
   border-radius: 50%;
-
   background: var(--gold);
 }
 
@@ -383,7 +373,6 @@ em {
     );
 
   border-top: none;
-
   border-radius: 0 0 8px 8px;
 
   padding: 12px;
@@ -398,14 +387,11 @@ em {
 
 .terminal .t-body .line {
   opacity: 0;
-
-  animation:
-    type 8s linear infinite;
+  animation: type 8s linear infinite;
 }
 
 .binary {
   position: absolute;
-
   bottom: 15%;
   left: 3%;
 
@@ -416,8 +402,7 @@ em {
   color: var(--gold);
   opacity: 0.18;
 
-  animation:
-    blink-op 3s ease-in-out infinite;
+  animation: blink-op 3s ease-in-out infinite;
 }
 
 @keyframes blink-op {
@@ -453,19 +438,15 @@ em {
 
 .nav-inner {
   max-width: 1100px;
-
   margin: 0 auto;
 
   padding: 12px 16px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 12px;
-
   flex-wrap: wrap;
 
   position: relative;
@@ -473,9 +454,7 @@ em {
 
 .brand {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
 }
 
@@ -484,30 +463,23 @@ em {
   height: 36px;
 
   border-radius: 50%;
-
-  outline:
-    1px solid var(--border);
+  outline: 1px solid var(--border);
 }
 
 .brand span {
   font-family: var(--font-serif);
-
   font-size: 0.95rem;
-
   letter-spacing: 0.02em;
 }
 
 .brand em {
   color: var(--gold);
-
   font-style: normal;
 }
 
 .nav-links {
   display: none;
-
   gap: 16px;
-
   font-size: 0.95rem;
 }
 
@@ -520,17 +492,14 @@ em {
 }
 
 
-/* ========== Mobile Menu ========== */
+/* Mobile menu */
 
 .nav-links.open {
   display: flex;
-
   flex-direction: column;
 
   position: absolute;
-
   top: 100%;
-
   inset-inline: 0;
 
   padding: 16px;
@@ -543,21 +512,17 @@ em {
   z-index: 40;
 }
 
-
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
-
     gap: 28px;
 
     font-size: 0.85rem;
 
     position: static;
-
     padding: 0;
 
     background: none;
-
     border: none;
   }
 
@@ -575,11 +540,9 @@ em {
 
 .nav-toggle {
   display: flex;
-
   flex-direction: column;
 
   justify-content: center;
-
   align-items: center;
 
   gap: 4px;
@@ -588,7 +551,6 @@ em {
   height: 36px;
 
   background: transparent;
-
   border: none;
 
   cursor: pointer;
@@ -607,20 +569,17 @@ em {
     opacity 0.25s ease;
 }
 
-.nav-toggle[aria-expanded="true"]
-span:nth-child(1) {
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
   transform:
     translateY(6px)
     rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"]
-span:nth-child(2) {
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
 }
 
-.nav-toggle[aria-expanded="true"]
-span:nth-child(3) {
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
   transform:
     translateY(-6px)
     rotate(-45deg);
@@ -633,15 +592,13 @@ span:nth-child(3) {
 }
 
 
-/* ========== Nav Controls ========== */
+/* ========== Nav controls ========== */
 
 .nav-controls {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
-
   flex-shrink: 0;
 }
 
@@ -655,11 +612,9 @@ span:nth-child(3) {
     1px solid var(--border);
 
   background: var(--surface);
-
   color: var(--gold);
 
   display: grid;
-
   place-items: center;
 
   cursor: pointer;
@@ -695,19 +650,16 @@ span:nth-child(3) {
 }
 
 
-/* ========== Language Button ========== */
+/* ========== Language button ========== */
 
 .lang-toggle {
   width: auto;
-
   min-width: 40px;
 
   padding: 0 12px;
 
   font-family: var(--font-mono);
-
   font-size: 0.72rem;
-
   font-weight: 500;
 
   letter-spacing: 0.06em;
@@ -719,13 +671,11 @@ span:nth-child(3) {
 
 .lang-toggle:hover {
   border-color: var(--gold);
-
   transform: none;
 }
 
 .lang-toggle.switching {
   opacity: 0.5;
-
   transform: scale(0.95);
 }
 
@@ -735,8 +685,7 @@ span:nth-child(3) {
 .hero {
   position: relative;
 
-  padding:
-    40px 16px 60px;
+  padding: 40px 16px 60px;
 
   z-index: 1;
 }
@@ -747,8 +696,7 @@ span:nth-child(3) {
   top: 0;
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   width: 500px;
   height: 500px;
@@ -776,7 +724,6 @@ span:nth-child(3) {
   position: relative;
 
   max-width: 1100px;
-
   margin: 0 auto;
 
   text-align: center;
@@ -786,8 +733,7 @@ span:nth-child(3) {
   width: 100px;
   height: 100px;
 
-  margin:
-    0 auto 24px;
+  margin: 0 auto 24px;
 
   padding: 4px;
 
@@ -826,17 +772,15 @@ span:nth-child(3) {
 }
 
 
-/* ========== Availability Tag ========== */
+/* ========== Availability tag ========== */
 
 .tag {
   display: inline-flex;
-
   align-items: center;
 
   gap: 8px;
 
-  padding:
-    6px 14px;
+  padding: 6px 14px;
 
   border-radius: 999px;
 
@@ -846,7 +790,6 @@ span:nth-child(3) {
     1px solid var(--border);
 
   font-size: 0.7rem;
-
   color: var(--text);
 }
 
@@ -881,15 +824,10 @@ span:nth-child(3) {
 
   font-weight: 600;
 
-  /*
-    تم تصغير الحجم النسبي قليلاً
-    حتى يبقى الاسم في سطر واحد
-    على الجوال والشاشات الصغيرة.
-  */
   font-size:
     clamp(
-      2rem,
-      9vw,
+      2.8rem,
+      10vw,
       5.5rem
     );
 
@@ -901,7 +839,7 @@ span:nth-child(3) {
 
   white-space: nowrap;
 
-  display: block;
+  text-align: center;
 
   width: 100%;
 
@@ -910,18 +848,15 @@ span:nth-child(3) {
 
 .hero-name span {
   display: inline-block;
-
-  white-space: nowrap;
 }
 
 
-/* ========== Hero Description ========== */
+/* ========== Hero description ========== */
 
 .hero-desc {
   max-width: 520px;
 
-  margin:
-    20px auto 0;
+  margin: 20px auto 0;
 
   color: var(--muted);
 
@@ -945,18 +880,15 @@ span:nth-child(3) {
 
 .btn {
   display: inline-flex;
-
   align-items: center;
 
   gap: 8px;
 
-  padding:
-    11px 22px;
+  padding: 11px 22px;
 
   border-radius: 999px;
 
   font-size: 0.85rem;
-
   font-weight: 500;
 
   transition:
@@ -970,7 +902,6 @@ span:nth-child(3) {
 
 .btn-gold {
   background: var(--gold);
-
   color: #0b1428;
 }
 
@@ -989,7 +920,6 @@ span:nth-child(3) {
 
 .btn-outline:hover {
   border-color: var(--gold);
-
   color: var(--gold);
 }
 
@@ -1030,7 +960,7 @@ span:nth-child(3) {
 }
 
 
-/* ========== Scrollbar ========== */
+/* Scrollbar */
 
 .about-full.open::-webkit-scrollbar {
   width: 5px;
@@ -1038,9 +968,7 @@ span:nth-child(3) {
 
 .about-full.open::-webkit-scrollbar-thumb {
   background: var(--gold);
-
   border-radius: 10px;
-
   opacity: 0.5;
 }
 
@@ -1049,7 +977,7 @@ span:nth-child(3) {
 }
 
 
-/* ========== About Toggle ========== */
+/* About toggle */
 
 .about-toggle-btn {
   background: transparent;
@@ -1059,8 +987,7 @@ span:nth-child(3) {
   border:
     1px solid var(--gold);
 
-  padding:
-    8px 18px;
+  padding: 8px 18px;
 
   border-radius: 6px;
 
@@ -1077,7 +1004,6 @@ span:nth-child(3) {
 
 .about-toggle-btn:hover {
   background: var(--gold);
-
   color: #0b1428;
 }
 
@@ -1089,19 +1015,16 @@ span:nth-child(3) {
 
   z-index: 1;
 
-  padding:
-    50px 16px;
+  padding: 50px 16px;
 }
 
 .container {
   max-width: 1100px;
-
   margin: 0 auto;
 }
 
 .section-title {
   display: flex;
-
   align-items: center;
 
   gap: 14px;
@@ -1121,7 +1044,6 @@ span:nth-child(3) {
   color: var(--gold);
 
   display: grid;
-
   place-items: center;
 
   font-family: var(--font-mono);
@@ -1223,37 +1145,23 @@ span:nth-child(3) {
 
 .passion .spark {
   font-size: 1.8rem;
-
   color: var(--gold);
 }
 
 
-/* ========== Greatest Passion Font ========== */
-
-/*
-  تغيير خط "الشغف الأكبر"
-  ليكون بنفس الخط الأنيق المستخدم
-  في العناوين.
-*/
-
-.passion .kicker {
-  font-family: var(--font-serif);
-
-  font-size: 1rem;
-
-  letter-spacing: 0.02em;
-
-  text-transform: none;
-
-  color: var(--muted);
-}
+/* ========== Passion Title ========== */
+/* تم تغيير الخط هنا */
 
 .passion-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 
   font-size: 1.8rem;
 
   margin-top: 6px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
 }
 
 
@@ -1270,8 +1178,7 @@ span:nth-child(3) {
 }
 
 .skills span {
-  padding:
-    7px 16px;
+  padding: 7px 16px;
 
   border-radius: 999px;
 
@@ -1336,7 +1243,6 @@ span:nth-child(3) {
   font-size: 1.8rem;
 
   display: grid;
-
   place-items: center;
 
   flex-shrink: 0;
@@ -1361,8 +1267,7 @@ span:nth-child(3) {
 }
 
 .tag-sm {
-  padding:
-    4px 11px;
+  padding: 4px 11px;
 
   border-radius: 999px;
 
@@ -1433,7 +1338,7 @@ span:nth-child(3) {
 }
 
 
-/* ========== Certifications & Projects ========== */
+/* ========== Certs & Projects ========== */
 
 .cert,
 .proj {
@@ -1462,7 +1367,6 @@ span:nth-child(3) {
   color: var(--gold);
 
   display: grid;
-
   place-items: center;
 
   font-family: var(--font-mono);
@@ -1495,7 +1399,6 @@ span:nth-child(3) {
 
 .cert-meta .issuer {
   color: var(--gold);
-
   font-weight: 500;
 }
 
@@ -1522,7 +1425,6 @@ span:nth-child(3) {
 
 .proj h3 {
   font-size: 0.82rem;
-
   line-height: 1.2;
 }
 
@@ -1561,8 +1463,7 @@ span:nth-child(3) {
 }
 
 .proj .tags span {
-  padding:
-    2px 6px;
+  padding: 2px 6px;
 
   border-radius: 999px;
 
@@ -1606,8 +1507,7 @@ span:nth-child(3) {
 
   gap: 11px;
 
-  padding:
-    13px 16px;
+  padding: 13px 16px;
 
   border-radius: 12px;
 
@@ -1704,8 +1604,7 @@ span:nth-child(3) {
   border: none;
 }
 
-[data-theme="light"]
-.contact-card {
+[data-theme="light"] .contact-card {
   background:
     linear-gradient(
       135deg,
@@ -1717,30 +1616,30 @@ span:nth-child(3) {
 }
 
 .contact-card .kicker {
-  /*
-    تغيير خط كلمة "تواصل"
-  */
-  font-family: var(--font-serif);
-
   color: inherit;
-
-  opacity: 0.9;
-
-  font-size: 1rem;
-
-  letter-spacing: 0.02em;
-
-  text-transform: none;
+  opacity: 0.8;
 }
 
+
+/* ========== Contact Title ========== */
+/* تم تغيير الخط حتى يكون العربي ثابتاً وجميلاً */
+
 .contact-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 
   font-size: 1.8rem;
 
-  line-height: 1.2;
+  line-height: 1.5;
 
   margin-top: 10px;
+
+  font-weight: 700;
+}
+
+.contact-title em {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .contact-info {
@@ -1760,6 +1659,103 @@ span:nth-child(3) {
 }
 
 
+/* ========== Social Icons ========== */
+
+.social-links-container {
+  display: flex;
+
+  gap: 30px;
+
+  margin-top: 40px;
+
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 8px 18px;
+
+  background: var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 999px;
+
+  transition: all var(--transition);
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  color: var(--text);
+}
+
+.social-icon-box {
+  width: 32px;
+  height: 32px;
+
+  background: var(--bg-2);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--gold);
+
+  font-size: 1.1rem;
+
+  transition: all var(--transition);
+}
+
+.social-text {
+  font-family: var(--font-mono);
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+
+  transition:
+    color var(--transition);
+}
+
+.social-btn:hover {
+  border-color: var(--gold);
+
+  transform: translateY(-3px);
+
+  background: var(--card-grad);
+
+  box-shadow: var(--shadow);
+}
+
+.social-btn:hover .social-icon-box {
+  background: var(--gold);
+
+  color: var(--bg);
+
+  border-color: var(--gold);
+}
+
+.social-btn:hover .social-text {
+  color: var(--gold);
+}
+
+
 /* ========== Footer ========== */
 
 .footer {
@@ -1770,8 +1766,7 @@ span:nth-child(3) {
   border-top:
     1px solid var(--border);
 
-  padding:
-    28px 16px;
+  padding: 28px 16px;
 
   text-align: center;
 }
@@ -1815,8 +1810,7 @@ span:nth-child(3) {
 .reveal {
   opacity: 0;
 
-  transform:
-    translateY(18px);
+  transform: translateY(18px);
 
   transition:
     opacity 0.6s,
@@ -1857,8 +1851,7 @@ span:nth-child(3) {
 
   inset: 0;
 
-  background:
-    rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5);
 
   backdrop-filter: blur(4px);
 
@@ -1880,12 +1873,10 @@ span:nth-child(3) {
 
   border-radius: var(--radius);
 
-  padding:
-    32px 28px;
+  padding: 32px 28px;
 
   box-shadow:
-    0 20px 60px
-    rgba(0,0,0,0.4);
+    0 20px 60px rgba(0,0,0,0.4);
 
   animation:
     slide-up 0.4s ease;
@@ -1897,8 +1888,7 @@ span:nth-child(3) {
 
 @media (max-width: 600px) {
   .modal-content {
-    padding:
-      24px 20px;
+    padding: 24px 20px;
 
     max-width:
       calc(100% - 20px);
@@ -1931,7 +1921,6 @@ span:nth-child(3) {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   z-index: 10;
@@ -1960,8 +1949,7 @@ span:nth-child(3) {
 
   gap: 8px;
 
-  margin:
-    16px 0;
+  margin: 16px 0;
 
   padding: 16px;
 
@@ -1990,8 +1978,7 @@ span:nth-child(3) {
 }
 
 #modalBody p {
-  margin:
-    16px 0;
+  margin: 16px 0;
 
   line-height: 1.7;
 
@@ -2001,7 +1988,7 @@ span:nth-child(3) {
 }
 
 
-/* ========== Certificate Button ========== */
+/* ========== Certificate button ========== */
 
 .cert-link-btn {
   display: inline-flex;
@@ -2014,8 +2001,7 @@ span:nth-child(3) {
 
   margin-top: 20px;
 
-  padding:
-    12px 20px;
+  padding: 12px 20px;
 
   border-radius: 12px;
 
@@ -2033,8 +2019,7 @@ span:nth-child(3) {
     2px solid var(--gold);
 }
 
-[data-theme="light"]
-.cert-link-btn {
+[data-theme="light"] .cert-link-btn {
   background: #2563eb;
 
   color: white;
@@ -2043,24 +2028,19 @@ span:nth-child(3) {
 }
 
 .cert-link-btn:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 8px 20px
-    rgba(0,145,255,0.46);
+    0 8px 20px rgba(0,145,255,0.46);
 }
 
-[data-theme="light"]
-.cert-link-btn:hover {
+[data-theme="light"] .cert-link-btn:hover {
   box-shadow:
-    0 8px 20px
-    rgba(37,99,235,0.3);
+    0 8px 20px rgba(37,99,235,0.3);
 }
 
 .cert-link-btn:active {
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 #modalBody .modal-tags {
@@ -2070,13 +2050,11 @@ span:nth-child(3) {
 
   gap: 8px;
 
-  margin:
-    16px 0;
+  margin: 16px 0;
 }
 
 #modalBody .modal-tag {
-  padding:
-    6px 14px;
+  padding: 6px 14px;
 
   border-radius: 999px;
 
@@ -2154,107 +2132,6 @@ span:nth-child(3) {
 }
 
 
-/* ========== Social Icons ========== */
-
-.social-links-container {
-  display: flex;
-
-  gap: 30px;
-
-  margin-top: 40px;
-
-  justify-content: center;
-}
-
-.social-btn {
-  display: flex;
-
-  align-items: center;
-
-  gap: 22px;
-
-  padding:
-    8px 18px;
-
-  background: var(--surface);
-
-  border:
-    1px solid var(--border);
-
-  border-radius: 999px;
-
-  transition:
-    all var(--transition);
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  color: var(--text);
-}
-
-.social-icon-box {
-  width: 32px;
-  height: 32px;
-
-  background: var(--bg-2);
-
-  border:
-    1px solid var(--border);
-
-  border-radius: 10px;
-
-  display: grid;
-
-  place-items: center;
-
-  color: var(--gold);
-
-  font-size: 1.1rem;
-
-  transition:
-    all var(--transition);
-}
-
-.social-text {
-  font-family: var(--font-mono);
-
-  font-size: 0.8rem;
-
-  letter-spacing: 0.1em;
-
-  text-transform: uppercase;
-
-  color: var(--muted);
-
-  transition:
-    color var(--transition);
-}
-
-.social-btn:hover {
-  border-color: var(--gold);
-
-  transform:
-    translateY(-3px);
-
-  background: var(--card-grad);
-
-  box-shadow: var(--shadow);
-}
-
-.social-btn:hover .social-icon-box {
-  background: var(--gold);
-
-  color: var(--bg);
-
-  border-color: var(--gold);
-}
-
-.social-btn:hover .social-text {
-  color: var(--gold);
-}
-
-
 /* ========== Mobile ========== */
 
 @media (max-width: 600px) {
@@ -2290,29 +2167,55 @@ span:nth-child(3) {
       32px 14px 50px;
   }
 
-  /*
-    الاسم يبقى في سطر واحد
-    على الجوال.
-  */
-  .hero-name {
-    font-size:
-      clamp(
-        1.9rem,
-        10vw,
-        3.5rem
-      );
-
-    white-space: nowrap;
-
-    letter-spacing: -0.02em;
-  }
-
-  .hero-name span {
-    white-space: nowrap;
-  }
-
   .modal-content {
     max-height: 90vh;
+  }
+
+  /* الاسم يبقى في سطر واحد */
+
+  .hero-name {
+    white-space: nowrap;
+
+    font-size:
+      clamp(
+        2rem,
+        11vw,
+        4rem
+      );
+
+    width: 100%;
+  }
+
+  /* الشغف الأكبر */
+
+  .passion-title {
+    font-family: var(--font-sans);
+
+    font-size: 1.65rem;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+  }
+
+  /* تواصل */
+
+  .contact-title {
+    font-family: var(--font-sans);
+
+    font-size: 1.65rem;
+
+    line-height: 1.55;
+
+    font-weight: 700;
+  }
+
+  .contact-title em {
+    font-family: var(--font-sans);
+
+    font-style: normal;
+
+    font-weight: 700;
   }
 }
 
@@ -2322,14 +2225,13 @@ span:nth-child(3) {
 @media (max-width: 400px) {
 
   .hero-name {
-    font-size: 1.85rem;
+    font-size:
+      clamp(
+        1.75rem,
+        10vw,
+        2.3rem
+      );
 
-    white-space: nowrap;
-
-    letter-spacing: -0.025em;
-  }
-
-  .hero-name span {
     white-space: nowrap;
   }
 
@@ -2360,5 +2262,13 @@ span:nth-child(3) {
     height: 40px;
 
     font-size: 0.9rem;
+  }
+
+  .passion-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
   }
 }

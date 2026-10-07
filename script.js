@@ -24,7 +24,7 @@ toggle.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
-}); 
+});
 
 // ===== Language toggle =====
 const langToggle = document.getElementById('langToggle');
@@ -79,7 +79,7 @@ aboutToggleBtn.addEventListener('click', () => {
 });
 
 // ===== Data =====
-const skills = ["HTML","CSS","JavaScript","Python","Java","C++","SQL","Power BI","Git",
+const skills = ["HTML","CSS","JavaScript","Python","Java","C++","SQL","Power BI","Power Query","DAX","Git",
   "GitHub","Artificial Intelligence","Machine Learning","Data Analytics","Data Visualization",
   "Networking","Subnetting","VLANs","Database Design","Problem Solving","Algorithmic Thinking"
 ];
@@ -87,8 +87,8 @@ const skills = ["HTML","CSS","JavaScript","Python","Java","C++","SQL","Power BI"
 const certs = [
   {
     id: 'cert-1',
-    title:        "أساسيات تطوير الويب ",
-    titleEn:      "Web Development Fundamentals ",
+    title:        "أساسيات تطوير الويب",
+    titleEn:      "Web Development Fundamentals",
     issuer:       "IBM",
     issuerEn:     "IBM",
     date:         "يونيو ٢٠٢٦",
@@ -132,7 +132,7 @@ const certs = [
     descriptionEn:"A comprehensive introduction to AI principles, core algorithms, and their practical applications.",
     certificateUrl: "https://learn.samai.futurex.sa/mod/customcert/verify_certificate.php?code=hsvpVOZ32n&qrcode=1"
   },
-{
+  {
     id: 'cert-4',
     title:        "مفاهيم الذكاء الاصطناعي والتطبيقات المتقدمة",
     titleEn:      "AI Concepts & Advanced Applications",
@@ -148,9 +148,8 @@ const certs = [
     description:  "دورة متقدمة تغطي أحدث تطبيقات الذكاء الاصطناعي والشبكات العصبية العميقة وتعلم الآلة المتقدم.",
     descriptionEn:"An advanced course covering the latest AI applications, deep neural networks, and advanced machine learning techniques.",
     certificateUrl: "https://learn.samai.futurex.sa/mod/customcert/verify_certificate.php?code=SMJ25BXhxM&qrcode=1"
-  
-},
-{
+  },
+  {
     id: 'cert-5',
     title:        "Power BI للمبتدئين (عبر Simplilearn، محتوى من Microsoft)",
     titleEn:      "Power BI for Beginners (via Simplilearn, Microsoft course content)",
@@ -165,8 +164,8 @@ const certs = [
     descriptionEn:"Completed the Power BI for Beginners course, featuring Microsoft-authored content delivered via the Simplilearn platform. Note: this is a completion certificate from Simplilearn, not an official Microsoft certification.",
     certificateUrl: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvMTA0OTI1MTFfMTA3NDQ4MTlfMTc4NDU5MzUzNTc3OS5wbmciLCJ1c2VybmFtZSI6IkFzZWVsIE11bmlmIEFsYW5hemkgIn0&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Fcertificates.simplicdn.net%2Fshare%2F10492511_10744819_1784593535779.png&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1q%2FyM0wpNQmPcDNNsq8rSk1LLSrKzEuPTyrKLy9OLbL1AapJTfHMAwALMm0UPwAAAA%3D%3D&_branch_match_id=1617857320959233990"
   }
-
 ];
+
 const projects = [
   {
     id: 'proj-1',
@@ -185,7 +184,7 @@ const projects = [
     liveUrl: "",
     codeUrl: "https://github.com/Aaseel11/Library-Management-System"
   },
- {
+  {
     id: 'proj-2',
     title:    "شبكة الحاسب — أقسام علوم الحاسب وعلوم البيانات",
     titleEn:  "Computer Network — CS & DS Departments",
@@ -235,8 +234,8 @@ const projects = [
     fullDescEn: "A UI/UX design for an educational project management tool, including:\n• UX design for core user flows\n• UI screens for managing academic tasks and projects\n• Interactive publishing via Figma Sites for live preview",
     liveUrl: "https://glossy-boar-47337945.figma.site/"
   },
-{
-      id: 'proj-5',
+  {
+    id: 'proj-5',
     title:    "نظام تسجيل المقررات الجامعية",
     titleEn:  "University Course Registration System",
     period:   "١٣ — ٢٣ يناير ٢٠٢٥",
@@ -250,21 +249,39 @@ const projects = [
     fullDescEn: "A comprehensive database project for a University Course Registration System built with Oracle SQL, including:\n• Relational database design for students, courses, and enrollments\n• A junction table (Enrollments) modeling a many-to-many relationship between students and courses\n• Queries to display student registrations and grades\n• A query to count enrolled students per course\n• A ready-made view (Student_Report) for unified reporting\n• Indexes for improved query performance",
     liveUrl: "",
     codeUrl: "https://github.com/Aaseel11/University-Course-Registration-System"
-},
+  },
+  {
+    id: 'proj-6',
+    title:    "لوحة تحليلات أداء المبيعات للتجارة الإلكترونية البرازيلية",
+    titleEn:  "Brazilian E-Commerce Sales Performance Dashboard",
+    period:   "١ أكتوبر ٢٠٢٦",
+    periodEn: "October 1, 2026",
+    desc:     "لوحة Power BI تفاعلية تحلل نحو 99 ألف طلب من بيانات Olist على Kaggle، مبنية على نموذج بيانات Star Schema مع قياسات DAX.",
+    descEn:   "An interactive Power BI dashboard analyzing ~99K orders from the Olist dataset (Kaggle), built on a star-schema data model with DAX measures.",
+    tags: ["Power BI","Power Query","DAX","Star Schema","Data Visualization"],
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="15" height="15">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M7 16v-4M12 16V8M17 16v-6"/></svg>`,
+    fullDesc:   "مشروع تحليل بيانات متكامل لأداء المبيعات والتوصيل وتجربة العملاء في متجر إلكتروني برازيلي، ويتضمن:\n• بناء نموذج Star Schema من 9 جداول مصدرية باستخدام Power Query\n• قياسات DAX ولوحة تفاعلية لمؤشرات الأداء\n• إيرادات بقيمة R$10.24M، ونسبة نجاح توصيل 97.02%\n• متوسط تقييم العملاء 4.09 من 5، وبطاقة الائتمان الأكثر استخداماً (78%)\n• اكتشاف وإصلاح مشكلة علاقة بين جدول الحقائق وجدول الأبعاد كانت تسبب قيم Null في عنصرين بصريين دون ظهور أي خطأ\n• تصحيح مؤشر نسبة التوصيل ليظهر كنسبة مئوية، وترجمة تصنيفات المنتجات من البرتغالية للإنجليزية",
+    fullDescEn: "An end-to-end data analysis project covering sales, delivery, and customer experience for a Brazilian e-commerce marketplace, including:\n• A star-schema model built from 9 source tables using Power Query\n• DAX measures and an interactive KPI dashboard\n• R$10.24M revenue and a 97.02% delivery success rate\n• 4.09/5 average customer rating; credit card is the top payment method (78%)\n• Diagnosed and fixed a fact-to-dimension relationship issue that silently caused null values in two visuals\n• Fixed the delivery-rate KPI to display as a percentage and translated product categories from Portuguese to English",
+    liveUrl: "https://drive.google.com/file/d/1IPoaaEPP7HZNm0rC-i7k_tFfocNEem2K/view",
+    codeUrl: "https://github.com/Aaseel11/brazilian-ecommerce-powerbi-dashboard"
+  }
 ];
+
 const courses = [
-  { ar: "الذكاء العاطفي ",           en: "Emotional Intelligence" },
-  { ar: "إدارة الضغوط",           en: "Stress Management" },
-  { ar: "أساسيات الإسعافات الأولية", en: "First Aid Basics" },
-  { ar: "مهارات إلقاء و الحوار ", en:"Presentation and dialogue skills"},
-  { ar: "إدارة المشاريع ",           en: "Project Management" },
-  { ar:  "الذكاء الأصطناعي و تطبيقاته في حياتنا اليومية",en: "AI Applications in Daily Life" },
-  { ar: "التفكير الخورازميات ",   en: "Algorithmic Thinking" },
-  { ar: "هيكل و قواعد بيانات النظام "       , en: " Structures & Database system" },
-  { ar: "شبكات الحاسب ",       en: "Computer Networks" },
-  { ar: "تطوير المواقع",         en: "Web Development" },
-  { ar: "هندسة البرمجيات ",    en: "Software Engineering" },
-  { ar: "تحليل البيانات ",          en: "Data Analysis" },
+  { ar: "الذكاء العاطفي",                              en: "Emotional Intelligence" },
+  { ar: "إدارة الضغوط",                                en: "Stress Management" },
+  { ar: "أساسيات الإسعافات الأولية",                   en: "First Aid Basics" },
+  { ar: "مهارات الإلقاء والحوار",                      en: "Presentation and Dialogue Skills" },
+  { ar: "إدارة المشاريع",                              en: "Project Management" },
+  { ar: "الذكاء الاصطناعي وتطبيقاته في حياتنا اليومية", en: "AI Applications in Daily Life" },
+  { ar: "التفكير الخوارزمي",                           en: "Algorithmic Thinking" },
+  { ar: "هيكل وقواعد بيانات النظام",                   en: "Data Structures & Database Systems" },
+  { ar: "شبكات الحاسب",                                en: "Computer Networks" },
+  { ar: "تطوير المواقع",                               en: "Web Development" },
+  { ar: "هندسة البرمجيات",                             en: "Software Engineering" },
+  { ar: "تحليل البيانات",                              en: "Data Analysis" },
 ];
 
 // ===== Modal System =====
@@ -321,6 +338,7 @@ function showCertModal(cert) {
 // Project modal
 function showProjectModal(proj) {
   const isEn = currentLang === 'en';
+  const period = isEn ? proj.periodEn : proj.period;
   const tagsHTML = proj.tags.map(t => `<div class="modal-tag">${t}</div>`).join('');
   const liveButton = proj.liveUrl
     ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
@@ -332,14 +350,17 @@ function showProjectModal(proj) {
         ${isEn ? 'View Code' : 'عرض الكود'}
       </a>`
     : '';
+  const periodBlock = period
+    ? `<div class="modal-meta">
+        <div class="modal-meta-item">
+          <span class="modal-meta-label">${isEn ? 'Period:' : 'الفترة الزمنية:'}</span>
+          <span>${period}</span>
+        </div>
+      </div>`
+    : '';
   const content = `
     <h2>${isEn ? proj.titleEn : proj.title}</h2>
-    <div class="modal-meta">
-      <div class="modal-meta-item">
-        <span class="modal-meta-label">${isEn ? 'Period:' : 'الفترة الزمنية:'}</span>
-        <span>${isEn ? proj.periodEn : proj.period}</span>
-      </div>
-    </div>
+    ${periodBlock}
     <p><strong>${isEn ? 'Description:' : 'الوصف:'}</strong><br/>${isEn ? proj.descEn : proj.desc}</p>
     <p style="white-space: pre-wrap;"><strong>${isEn ? 'Details:' : 'التفاصيل:'}</strong><br/>${isEn ? proj.fullDescEn : proj.fullDesc}</p>
     <div class="modal-meta">
@@ -375,6 +396,20 @@ function showCourseModal(course) {
 document.getElementById('skills-list').innerHTML =
   skills.map(s => `<span>${s}</span>`).join('');
 
+// ===== Scroll Reveal =====
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      const langs = e.target.querySelectorAll('.lang');
+      langs.forEach(l => {
+        const fill = l.querySelector('.bar i');
+        if (fill) fill.style.width = l.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
 // ===== Render Certs =====
 function renderCerts() {
   const isEn = currentLang === 'en';
@@ -401,14 +436,17 @@ function renderCerts() {
 // ===== Render Projects =====
 function renderProjects() {
   const isEn = currentLang === 'en';
-  document.getElementById('projects-list').innerHTML = projects.map(p => `
+  document.getElementById('projects-list').innerHTML = projects.map(p => {
+    const period = isEn ? p.periodEn : p.period;
+    return `
     <div class="card proj reveal" data-proj-id="${p.id}">
       <div class="icon">${p.icon}</div>
       <h3>${isEn ? p.titleEn : p.title}</h3>
-      <div class="period">${isEn ? p.periodEn : p.period}</div>
+      ${period ? `<div class="period">${period}</div>` : ''}
       <p>${isEn ? p.descEn : p.desc}</p>
       <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   document.querySelectorAll('.proj').forEach(el => {
     el.addEventListener('click', function() {
@@ -437,22 +475,6 @@ function renderCourses() {
 
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
-
-// ===== Scroll Reveal =====
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      const langs = e.target.querySelectorAll('.lang');
-      langs.forEach(l => {
-        const fill = l.querySelector('.bar i');
-        if (fill) fill.style.width = l.dataset.pct + '%';
-      });
-    }
-  });
-}, { threshold: 0.12 });
-
-
 
 // ===== Backdrop animations =====
 const chars = "01<>{}/=();*&%$#ABCDEF01";
@@ -580,7 +602,7 @@ style.textContent = `
 
     /* Dark Mode */
     :root[data-theme="dark"] #scroll-top {
-        background-color: #0b1428; 
+        background-color: #0b1428;
     }
 `;
 
@@ -609,4 +631,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-

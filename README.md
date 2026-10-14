@@ -54,7 +54,7 @@ Check it out here:
 
 # About Me
 
-Aseel Al-Anazi
+Aseel ALANAZI
 
 Computer Science Student · University of Hail
 

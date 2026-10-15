@@ -413,7 +413,19 @@ const obs = new IntersectionObserver((entries) => {
 // ===== Render Certs =====
 function renderCerts() {
   const isEn = currentLang === 'en';
-  document.getElementById('certs').innerHTML = certs.map(c => `
+  document.getElementById('certs').innerHTML = certs.map(c => {
+    const btnText = isEn ? 'View Certificate' : 'عرض الشهادة';
+    const linkBtn = c.certificateUrl
+      ? `<a href="${c.certificateUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cert-link-btn"
+            onclick="event.stopPropagation()">
+           ${btnText}
+         </a>`
+      : '';
+
+    return `
     <div class="card cert reveal" data-cert-id="${c.id}">
       <div class="icon">${c.icon}</div>
       <h3>${isEn ? c.titleEn : c.title}</h3>
@@ -421,10 +433,13 @@ function renderCerts() {
         <span class="issuer">${isEn ? c.issuerEn : c.issuer}</span>
         <span class="date">${isEn ? c.dateEn : c.date}</span>
       </div>
-    </div>`).join('');
+      ${linkBtn}
+    </div>`;
+  }).join('');
 
   document.querySelectorAll('.cert').forEach(el => {
-    el.addEventListener('click', function() {
+    el.addEventListener('click', function (e) {
+      if (e.target.closest('.cert-link-btn')) return;
       const cert = certs.find(c => c.id === this.dataset.certId);
       if (cert) showCertModal(cert);
     });

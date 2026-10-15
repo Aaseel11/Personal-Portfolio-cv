@@ -1150,7 +1150,6 @@ em {
 
 
 /* ========== Passion Title ========== */
-/* تم تغيير الخط هنا */
 
 .passion-title {
   font-family: var(--font-sans);
@@ -1622,7 +1621,6 @@ em {
 
 
 /* ========== Contact Title ========== */
-/* تم تغيير الخط حتى يكون العربي ثابتاً وجميلاً */
 
 .contact-title {
   font-family: var(--font-sans);
@@ -1992,51 +1990,38 @@ em {
 
 .cert-link-btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
+  gap: 4px;
 
-  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 10px;
 
-  margin-top: 20px;
-
-  padding: 12px 20px;
-
-  border-radius: 12px;
+  border-radius: 6px;
 
   background: var(--gold);
-
   color: #0b1428;
 
-  font-weight: 600;
-
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 0.7rem;
 
   transition: all 0.3s ease;
-
-  border:
-    2px solid var(--gold);
+  border: 1px solid var(--gold);
 }
 
 [data-theme="light"] .cert-link-btn {
   background: #2563eb;
-
   color: white;
-
   border-color: #2563eb;
 }
 
 .cert-link-btn:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 20px rgba(0,145,255,0.46);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 145, 255, 0.25);
 }
 
 [data-theme="light"] .cert-link-btn:hover {
-  box-shadow:
-    0 8px 20px rgba(37,99,235,0.3);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.2);
 }
 
 .cert-link-btn:active {
@@ -2171,8 +2156,6 @@ em {
     max-height: 90vh;
   }
 
-  /* الاسم يبقى في سطر واحد */
-
   .hero-name {
     white-space: nowrap;
 
@@ -2186,8 +2169,6 @@ em {
     width: 100%;
   }
 
-  /* الشغف الأكبر */
-
   .passion-title {
     font-family: var(--font-sans);
 
@@ -2197,8 +2178,6 @@ em {
 
     line-height: 1.4;
   }
-
-  /* تواصل */
 
   .contact-title {
     font-family: var(--font-sans);

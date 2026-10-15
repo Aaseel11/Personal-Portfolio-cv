@@ -99,7 +99,7 @@ const certs = [
   <line x1="12" y1="2" x2="12" y2="22" opacity="0.4"/></svg>`,
     description:  "دورة شاملة حول أساسيات تطوير الويب باستخدام HTML وCSS وJavaScript، مع التركيز على بناء صفحات ويب تفاعلية.",
     descriptionEn:"A comprehensive course on web development fundamentals using HTML, CSS, and JavaScript, focusing on building interactive web pages.",
-    certificateUrl: ""
+    certificateUrl: "https://www.credly.com/badges/6e619c48-cedb-49ff-ae56-73eb062b7afd"
   },
   {
     id: 'cert-2',
@@ -114,7 +114,7 @@ const certs = [
       <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>`,
     description:  "دورة شاملة حول قواعد البيانات العلائقية، استعلامات SQL، إدارة البيانات، وتصميم قواعد البيانات.",
     descriptionEn:"A comprehensive course on relational databases, SQL queries, data management, and database design.",
-    certificateUrl: ""
+    certificateUrl: "https://courses.cognitiveclass.ai/certificates/675a181928ea402586307386594819d6"
   },
   {
     id: 'cert-3',

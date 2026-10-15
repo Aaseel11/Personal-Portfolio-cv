@@ -57,7 +57,6 @@ langToggle.addEventListener('click', () => {
   applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
 });
 
-
 // ===== About Me expandable bio =====
 const aboutFull = document.getElementById('aboutFull');
 const aboutToggleBtn = document.getElementById('aboutToggleBtn');
@@ -308,11 +307,11 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
 });
 
-// Cert modal
+// Cert modal (تم تعديل الدالة لضم متغير urlButton داخل content)
 function showCertModal(cert) {
   const isEn = currentLang === 'en';
   const urlButton = cert.certificateUrl
-    ? `<a href="${cert.certificateUrl}" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+    ? `<a href="${cert.certificateUrl}" target="_blank" rel="noopener noreferrer" class="cert-link-btn" style="display:inline-block; margin-top:15px;">
         ${isEn ? 'View Certificate' : 'عرض الشهادة'}
     </a>`
     : '';
@@ -393,8 +392,10 @@ function showCourseModal(course) {
 }
 
 // ===== Render Skills =====
-document.getElementById('skills-list').innerHTML =
-  skills.map(s => `<span>${s}</span>`).join('');
+const skillsListEl = document.getElementById('skills-list');
+if (skillsListEl) {
+  skillsListEl.innerHTML = skills.map(s => `<span>${s}</span>`).join('');
+}
 
 // ===== Scroll Reveal =====
 const obs = new IntersectionObserver((entries) => {
@@ -413,7 +414,10 @@ const obs = new IntersectionObserver((entries) => {
 // ===== Render Certs =====
 function renderCerts() {
   const isEn = currentLang === 'en';
-  document.getElementById('certs').innerHTML = certs.map(c => {
+  const certsContainer = document.getElementById('certs');
+  if (!certsContainer) return;
+
+  certsContainer.innerHTML = certs.map(c => {
     const btnText = isEn ? 'View Certificate' : 'عرض الشهادة';
     const linkBtn = c.certificateUrl
       ? `<a href="${c.certificateUrl}"
@@ -451,7 +455,10 @@ function renderCerts() {
 // ===== Render Projects =====
 function renderProjects() {
   const isEn = currentLang === 'en';
-  document.getElementById('projects-list').innerHTML = projects.map(p => {
+  const projectsContainer = document.getElementById('projects-list');
+  if (!projectsContainer) return;
+
+  projectsContainer.innerHTML = projects.map(p => {
     const period = isEn ? p.periodEn : p.period;
     return `
     <div class="card proj reveal" data-proj-id="${p.id}">
@@ -476,7 +483,10 @@ function renderProjects() {
 // ===== Render Courses =====
 function renderCourses() {
   const isEn = currentLang === 'en';
-  document.getElementById('courses').innerHTML = courses.map((c, i) => `
+  const coursesContainer = document.getElementById('courses');
+  if (!coursesContainer) return;
+
+  coursesContainer.innerHTML = courses.map((c, i) => `
     <div class="item reveal" data-course-index="${i}">
       <span class="bullet"></span><span>${isEn ? c.en : c.ar}</span>
     </div>`).join('');
@@ -494,17 +504,19 @@ function renderCourses() {
 // ===== Backdrop animations =====
 const chars = "01<>{}/=();*&%$#ABCDEF01";
 const mat = document.getElementById('matrix');
-const colCount = window.innerWidth < 600 ? 6 : 12;
-for (let i = 0; i < colCount; i++) {
-  const col = document.createElement('div');
-  col.className = 'col';
-  col.style.left = (i * (100 / colCount)) + '%';
-  col.style.animationDuration = (8 + (i % 5) * 2) + 's';
-  col.style.animationDelay = ((i * 0.7) % 6) + 's';
-  let txt = '';
-  for (let j = 0; j < 24; j++) txt += chars[Math.floor(Math.random() * chars.length)] + ' ';
-  col.textContent = txt;
-  mat.appendChild(col);
+if (mat) {
+  const colCount = window.innerWidth < 600 ? 6 : 12;
+  for (let i = 0; i < colCount; i++) {
+    const col = document.createElement('div');
+    col.className = 'col';
+    col.style.left = (i * (100 / colCount)) + '%';
+    col.style.animationDuration = (8 + (i % 5) * 2) + 's';
+    col.style.animationDelay = ((i * 0.7) % 6) + 's';
+    let txt = '';
+    for (let j = 0; j < 24; j++) txt += chars[Math.floor(Math.random() * chars.length)] + ' ';
+    col.textContent = txt;
+    mat.appendChild(col);
+  }
 }
 
 const nodes = [
@@ -518,50 +530,54 @@ const eG = document.getElementById('net-edges');
 const pG = document.getElementById('net-packets');
 const nG = document.getElementById('net-nodes');
 
-edges.forEach(([a,b], i) => {
-  const A = nodes[a], B = nodes[b];
-  const ln = document.createElementNS(ns, 'line');
-  ln.setAttribute('x1', A.x); ln.setAttribute('y1', A.y);
-  ln.setAttribute('x2', B.x); ln.setAttribute('y2', B.y);
-  eG.appendChild(ln);
+if (eG && pG && nG) {
+  edges.forEach(([a,b], i) => {
+    const A = nodes[a], B = nodes[b];
+    const ln = document.createElementNS(ns, 'line');
+    ln.setAttribute('x1', A.x); ln.setAttribute('y1', A.y);
+    ln.setAttribute('x2', B.x); ln.setAttribute('y2', B.y);
+    eG.appendChild(ln);
 
-  const pk = document.createElementNS(ns, 'circle');
-  pk.setAttribute('r', '0.8');
-  pk.setAttribute('cx', A.x); pk.setAttribute('cy', A.y);
-  const anim1 = document.createElementNS(ns, 'animate');
-  anim1.setAttribute('attributeName', 'cx');
-  anim1.setAttribute('values', `${A.x};${B.x};${A.x}`);
-  anim1.setAttribute('dur', (4 + (i % 4)) + 's');
-  anim1.setAttribute('repeatCount', 'indefinite');
-  const anim2 = document.createElementNS(ns, 'animate');
-  anim2.setAttribute('attributeName', 'cy');
-  anim2.setAttribute('values', `${A.y};${B.y};${A.y}`);
-  anim2.setAttribute('dur', (4 + (i % 4)) + 's');
-  anim2.setAttribute('repeatCount', 'indefinite');
-  pk.appendChild(anim1); pk.appendChild(anim2);
-  pG.appendChild(pk);
-});
+    const pk = document.createElementNS(ns, 'circle');
+    pk.setAttribute('r', '0.8');
+    pk.setAttribute('cx', A.x); pk.setAttribute('cy', A.y);
+    const anim1 = document.createElementNS(ns, 'animate');
+    anim1.setAttribute('attributeName', 'cx');
+    anim1.setAttribute('values', `${A.x};${B.x};${A.x}`);
+    anim1.setAttribute('dur', (4 + (i % 4)) + 's');
+    anim1.setAttribute('repeatCount', 'indefinite');
+    const anim2 = document.createElementNS(ns, 'animate');
+    anim2.setAttribute('attributeName', 'cy');
+    anim2.setAttribute('values', `${A.y};${B.y};${A.y}`);
+    anim2.setAttribute('dur', (4 + (i % 4)) + 's');
+    anim2.setAttribute('repeatCount', 'indefinite');
+    pk.appendChild(anim1); pk.appendChild(anim2);
+    pG.appendChild(pk);
+  });
 
-nodes.forEach((n, i) => {
-  const c = document.createElementNS(ns, 'circle');
-  c.setAttribute('cx', n.x); c.setAttribute('cy', n.y);
-  c.setAttribute('r', '1.6');
-  c.setAttribute('class', 'packet');
-  c.style.animationDelay = (i * 0.2) + 's';
-  nG.appendChild(c);
-});
+  nodes.forEach((n, i) => {
+    const c = document.createElementNS(ns, 'circle');
+    c.setAttribute('cx', n.x); c.setAttribute('cy', n.y);
+    c.setAttribute('r', '1.6');
+    c.setAttribute('class', 'packet');
+    c.style.animationDelay = (i * 0.2) + 's';
+    nG.appendChild(c);
+  });
+}
 
 const bars = document.getElementById('bars');
-[30,18,42,25,50,35,45,28].forEach((h, i) => {
-  const r = document.createElementNS(ns, 'rect');
-  r.setAttribute('x', 10 + i * 11);
-  r.setAttribute('y', 55 - h);
-  r.setAttribute('width', 7);
-  r.setAttribute('height', h);
-  r.setAttribute('class', 'bar-anim');
-  r.style.animationDelay = (i * 0.2) + 's';
-  bars.appendChild(r);
-});
+if (bars) {
+  [30,18,42,25,50,35,45,28].forEach((h, i) => {
+    const r = document.createElementNS(ns, 'rect');
+    r.setAttribute('x', 10 + i * 11);
+    r.setAttribute('y', 55 - h);
+    r.setAttribute('width', 7);
+    r.setAttribute('height', h);
+    r.setAttribute('class', 'bar-anim');
+    r.style.animationDelay = (i * 0.2) + 's';
+    bars.appendChild(r);
+  });
+}
 
 const terminal = [
   "$ aseel ~/portfolio",
@@ -572,18 +588,17 @@ const terminal = [
   "$ deploy --to=future",
 ];
 const tBody = document.getElementById('terminal-body');
-terminal.forEach((line, i) => {
-  const d = document.createElement('div');
-  d.className = 'line';
-  d.textContent = line;
-  d.style.animationDelay = (i * 1.2) + 's';
-  tBody.appendChild(d);
-});
+if (tBody) {
+  terminal.forEach((line, i) => {
+    const d = document.createElement('div');
+    d.className = 'line';
+    d.textContent = line;
+    d.style.animationDelay = (i * 1.2) + 's';
+    tBody.appendChild(d);
+  });
+}
 
-/* ========================================
-SCROLL TO TOP
-======================================== */
-
+// ===== Scroll to top button =====
 const btn = document.createElement("button");
 btn.id = "scroll-top";
 btn.textContent = "↑";
@@ -607,7 +622,6 @@ btn.style.cssText = [
 
 document.body.appendChild(btn);
 
-// ===== Theme-based styling for scroll button =====
 const style = document.createElement("style");
 style.textContent = `
     /* Light Mode */
@@ -634,7 +648,7 @@ btn.addEventListener("click", function () {
 // ===== Initial render + language apply =====
 applyLanguage(currentLang);
 
-// Smooth scroll
+// Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
